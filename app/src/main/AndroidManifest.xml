@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.LiosiApp">
-        <activity android:name=".MainActivity">
+        <activity android:name=".data.view.activity.SplashScreenActivity"></activity>
+        <activity android:name=".data.view.activity.AuthenticationActivity" />
+        <activity android:name=".data.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
