@@ -34,11 +34,11 @@
             android:id="@+id/action_todoFragment_to_positifFragment"
             app:destination="@id/positifFragment" />
         <action
-            android:id="@+id/action_todoFragment_to_recordFragment"
-            app:destination="@id/recordFragment" />
-        <action
             android:id="@+id/action_todoFragment_to_breatheFragment"
             app:destination="@id/breatheFragment" />
+        <action
+            android:id="@+id/action_todoFragment_to_muscleFragment"
+            app:destination="@id/muscleFragment" />
     </fragment>
     <fragment
         android:id="@+id/positifFragment"
@@ -50,11 +50,6 @@
         android:name="com.gemastik.liosiapp.data.view.fragment.BreatheFragment"
         android:label="fragment_breathe"
         tools:layout="@layout/fragment_breathe" />
-    <fragment
-        android:id="@+id/recordFragment"
-        android:name="com.gemastik.liosiapp.data.view.fragment.RecordFragment"
-        android:label="fragment_record"
-        tools:layout="@layout/fragment_record" />
     <fragment
         android:id="@+id/premiumFragment"
         android:name="com.gemastik.liosiapp.data.view.fragment.PremiumFragment"
@@ -78,4 +73,9 @@
         android:name="com.gemastik.liosiapp.data.view.fragment.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/muscleFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.MuscleFragment"
+        android:label="fragment_muscle"
+        tools:layout="@layout/fragment_muscle" />
 </navigation>
