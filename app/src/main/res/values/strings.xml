@@ -6,4 +6,9 @@
     <string name="mood_subtitle">I Need Help !</string>
 
     <string name="next">next</string>
+    <string name="user">User</string>
+    <string name="selamat_pagi">Selamat pagi</string>
+    <string name="start">Start</string>
+    <string name="todo">What to do next ?</string>
+    <string name="premium">Talk with psychologist</string>
 </resources>

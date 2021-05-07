@@ -6,4 +6,5 @@
     <color name="colorHint">#161e54</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#111111</color>
+    <color name="colorGrey">#616161</color>
 </resources>

@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.gemastik.liosiapp.R
 import com.gemastik.liosiapp.databinding.FragmentMoodBinding
-import com.gemastik.liosiapp.utils.showToast
 import com.hsalf.smileyrating.SmileyRating
 
 
@@ -42,7 +43,11 @@ class MoodFragment : Fragment() {
                 else -> 0
             }
         }
-        binding.btnNext.setOnClickListener { showToast("$rating") }
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_moodFragment_to_homeFragment
+            )
+        }
     }
 
 }
