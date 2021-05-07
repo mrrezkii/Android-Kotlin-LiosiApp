@@ -9,15 +9,22 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.LiosiApp">
-        <activity android:name=".data.view.activity.SplashScreenActivity"></activity>
-        <activity android:name=".data.view.activity.AuthenticationActivity" />
-        <activity android:name=".data.view.activity.MainActivity">
+        <activity
+            android:name=".data.view.activity.SplashScreenActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.LiosiApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".data.view.activity.AuthenticationActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".data.view.activity.MainActivity"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

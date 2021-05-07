@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/moodFragment">
+    <fragment
+        android:id="@+id/moodFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.MoodFragment"
+        android:label="fragment_mood"
+        tools:layout="@layout/fragment_mood">
+        <action
+            android:id="@+id/action_moodFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_todoFragment"
+            app:destination="@id/todoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_premiumFragment"
+            app:destination="@id/premiumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.TodoFragment"
+        android:label="fragment_todo"
+        tools:layout="@layout/fragment_todo">
+        <action
+            android:id="@+id/action_todoFragment_to_positifFragment"
+            app:destination="@id/positifFragment" />
+        <action
+            android:id="@+id/action_todoFragment_to_recordFragment"
+            app:destination="@id/recordFragment" />
+        <action
+            android:id="@+id/action_todoFragment_to_breatheFragment"
+            app:destination="@id/breatheFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/positifFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.PositifFragment"
+        android:label="fragment_positif"
+        tools:layout="@layout/fragment_positif" />
+    <fragment
+        android:id="@+id/breatheFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.BreatheFragment"
+        android:label="fragment_breathe"
+        tools:layout="@layout/fragment_breathe" />
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" />
+    <fragment
+        android:id="@+id/premiumFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.PremiumFragment"
+        android:label="fragment_premium"
+        tools:layout="@layout/fragment_premium">
+        <action
+            android:id="@+id/action_premiumFragment_to_payFragment"
+            app:destination="@id/payFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.PayFragment"
+        android:label="fragment_pay"
+        tools:layout="@layout/fragment_pay">
+        <action
+            android:id="@+id/action_payFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+</navigation>
