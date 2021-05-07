@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Liosi</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="mood_title">Bagaimana Perasaanmu\nHari Ini ?</string>
+    <string name="mood_subtitle">I Need Help !</string>
+
+    <string name="next">next</string>
 </resources>
