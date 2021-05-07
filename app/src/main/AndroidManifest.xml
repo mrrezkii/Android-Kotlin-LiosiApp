@@ -8,11 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LiosiApp">
+        android:theme="@style/Theme.LiosiApp.NoActionBar">
         <activity
             android:name=".data.view.activity.SplashScreenActivity"
-            android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.LiosiApp.NoActionBar">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
