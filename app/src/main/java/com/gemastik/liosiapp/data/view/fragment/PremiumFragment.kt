@@ -39,6 +39,10 @@ class PremiumFragment : Fragment() {
                 R.drawable.bg_breathe_positif
             )
         )
+        binding.scrollContainer.menuPremium1.root.setOnClickListener {
+            findNavController().navigate(R.id.action_premiumFragment_to_chatFragment)
+        }
+
 
         binding.scrollContainer.menuPremium2.tvTitle.text = getString(R.string.menu_premium_2)
         binding.scrollContainer.menuPremium2.ivBackground.setImageDrawable(
@@ -47,6 +51,10 @@ class PremiumFragment : Fragment() {
                 R.drawable.bg_mood_todo
             )
         )
+        binding.scrollContainer.menuPremium2.root.setOnClickListener {
+            findNavController().navigate(R.id.action_premiumFragment_to_chatFragment)
+        }
+
 
         binding.scrollContainer.menuPremium3.tvTitle.text = getString(R.string.menu_premium_3)
         binding.scrollContainer.menuPremium3.ivBackground.setImageDrawable(
@@ -55,6 +63,10 @@ class PremiumFragment : Fragment() {
                 R.drawable.bg_home_positif
             )
         )
+        binding.scrollContainer.menuPremium3.root.setOnClickListener {
+            findNavController().navigate(R.id.action_premiumFragment_to_chatFragment)
+        }
+
 
         binding.scrollContainer.menuPremium4.tvTitle.text = getString(R.string.menu_premium_4)
         binding.scrollContainer.menuPremium4.ivBackground.setImageDrawable(
@@ -63,6 +75,9 @@ class PremiumFragment : Fragment() {
                 R.drawable.bg_breathe_positif
             )
         )
+        binding.scrollContainer.menuPremium4.root.setOnClickListener {
+            findNavController().navigate(R.id.action_premiumFragment_to_chatFragment)
+        }
 
     }
 

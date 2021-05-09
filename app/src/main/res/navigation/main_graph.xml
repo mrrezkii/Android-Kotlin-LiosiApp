@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_premiumFragment_to_payFragment"
             app:destination="@id/payFragment" />
+        <action
+            android:id="@+id/action_premiumFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/payFragment"
