@@ -15,4 +15,9 @@
     <string name="breathe">Tarik Nafas Dengan Dalam</string>
     <string name="muscle">Relaksasi Otot</string>
     <string name="positif">Visualisasi Positif</string>
+
+    <string name="menu_premium_1">Paket Perkenalan\n Rp100.000 tiap sesi</string>
+    <string name="menu_premium_2">Paket Bahagia (12x sesi) Rp75.000 tiap sesi \n total Rp980.000</string>
+    <string name="menu_premium_3">Paket Tenang (4x sesi) Rp90.000 tiap sesi \n total Rp360.000</string>
+    <string name="menu_premium_4">Paket Bahagia (12x sesi) Rp75.000 tiap sesi \n total Rp980.000</string>
 </resources>
