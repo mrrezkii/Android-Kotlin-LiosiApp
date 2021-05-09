@@ -30,6 +30,9 @@ class TodoFragment : Fragment() {
         binding.menuTodo1.btnMenu.text = getString(R.string.breathe)
         binding.menuTodo2.btnMenu.text = getString(R.string.muscle)
         binding.menuTodo3.btnMenu.text = getString(R.string.positif)
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
         binding.menuTodo1.btnMenu.setOnClickListener {
             findNavController().navigate(R.id.action_todoFragment_to_breatheFragment)
         }
