@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gemastik.liosiapp.R
@@ -39,6 +40,12 @@ class MuscleFragment : Fragment() {
                 R.drawable.balasana
             )
         )
+        binding.scrollContainer.menuMuscle1.root.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_muscleFragment_to_detailMuscleFragment,
+                bundleOf("id" to "1")
+            )
+        }
 
         binding.scrollContainer.menuMuscle2.tvTitle.text = getString(R.string.menu_muscle_2)
         binding.scrollContainer.menuMuscle2.ivBackground.setImageDrawable(
@@ -47,14 +54,26 @@ class MuscleFragment : Fragment() {
                 R.drawable.viparita_korani
             )
         )
+        binding.scrollContainer.menuMuscle2.root.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_muscleFragment_to_detailMuscleFragment,
+                bundleOf("id" to "2")
+            )
+        }
 
         binding.scrollContainer.menuMuscle3.tvTitle.text = getString(R.string.menu_muscle_3)
-        binding.scrollContainer.menuMuscle4.ivBackground.setImageDrawable(
+        binding.scrollContainer.menuMuscle3.ivBackground.setImageDrawable(
             ContextCompat.getDrawable(
                 requireContext(),
                 R.drawable.makarasona
             )
         )
+        binding.scrollContainer.menuMuscle3.root.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_muscleFragment_to_detailMuscleFragment,
+                bundleOf("id" to "3")
+            )
+        }
 
         binding.scrollContainer.menuMuscle4.tvTitle.text = getString(R.string.menu_muscle_4)
         binding.scrollContainer.menuMuscle4.ivBackground.setImageDrawable(
@@ -63,6 +82,12 @@ class MuscleFragment : Fragment() {
                 R.drawable.savasana
             )
         )
+        binding.scrollContainer.menuMuscle4.root.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_muscleFragment_to_detailMuscleFragment,
+                bundleOf("id" to "4")
+            )
+        }
     }
 
 }

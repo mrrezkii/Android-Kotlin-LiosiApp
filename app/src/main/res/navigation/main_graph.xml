@@ -77,5 +77,14 @@
         android:id="@+id/muscleFragment"
         android:name="com.gemastik.liosiapp.data.view.fragment.MuscleFragment"
         android:label="fragment_muscle"
-        tools:layout="@layout/fragment_muscle" />
+        tools:layout="@layout/fragment_muscle">
+        <action
+            android:id="@+id/action_muscleFragment_to_detailMuscleFragment"
+            app:destination="@id/detailMuscleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMuscleFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.DetailMuscleFragment"
+        android:label="fragment_detail_muscle"
+        tools:layout="@layout/fragment_detail_muscle" />
 </navigation>

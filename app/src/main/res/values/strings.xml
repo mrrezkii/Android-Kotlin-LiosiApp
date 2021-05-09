@@ -21,6 +21,11 @@
     <string name="menu_muscle_3">Makarasona</string>
     <string name="menu_muscle_4">Savasana</string>
 
+    <string name="detail_muscle_1">Balasana menyerupai posisi janin bayi. Balasana melepaskan ketengangan di pungguung, bahu, dan dada. Efektif untuk mengurangi stress dan kecemasan</string>
+    <string name="detail_muscle_2">Viparita Korani adalah solusi berbagai masalah. Berfungsi mengatur aliran darah, mengurangi bengkak pada kaki dan sakit punggung</string>
+    <string name="detail_muscle_3">Makarasona menyerupai buaya dengan kepala diatas air. Makarasona merilekskan bahu dan punggung, mengurangi kelelahan</string>
+    <string name="detail_muscle_4">Savasana adalah posisi relaksasi klasik. Ini mengharuskan Anda tidur terlentang. Savana menenangkan semua otot dan merangsang sirkulasi darah</string>
+
     <string name="menu_premium_1">Paket Perkenalan\n Rp100.000 tiap sesi</string>
     <string name="menu_premium_2">Paket Bahagia (12x sesi) Rp75.000 tiap sesi \n total Rp980.000</string>
     <string name="menu_premium_3">Paket Tenang (4x sesi) Rp90.000 tiap sesi \n total Rp360.000</string>
