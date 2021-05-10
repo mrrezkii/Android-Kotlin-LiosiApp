@@ -9,6 +9,19 @@ import kotlinx.coroutines.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
+    private val moveToMain: Intent by lazy {
+        Intent(
+            this@SplashScreenActivity,
+            MainActivity::class.java
+        )
+    }
+    private val moveToAuth: Intent by lazy {
+        Intent(
+            this@SplashScreenActivity,
+            AuthenticationActivity::class.java
+        )
+    }
+
     private val binding: ActivitySplashScreenBinding by lazy {
         ActivitySplashScreenBinding.inflate(
             layoutInflater
@@ -24,7 +37,7 @@ class SplashScreenActivity : AppCompatActivity() {
         activityScope.launch {
             delay(3000)
 
-            var intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+            var intent = moveToAuth
             startActivity(intent)
             finish()
         }
