@@ -49,7 +49,11 @@
         android:id="@+id/breatheFragment"
         android:name="com.gemastik.liosiapp.data.view.fragment.BreatheFragment"
         android:label="fragment_breathe"
-        tools:layout="@layout/fragment_breathe" />
+        tools:layout="@layout/fragment_breathe">
+        <action
+            android:id="@+id/action_breatheFragment_to_detailBreatheFragment"
+            app:destination="@id/detailBreatheFragment" />
+    </fragment>
     <fragment
         android:id="@+id/premiumFragment"
         android:name="com.gemastik.liosiapp.data.view.fragment.PremiumFragment"
@@ -90,4 +94,18 @@
         android:name="com.gemastik.liosiapp.data.view.fragment.DetailMuscleFragment"
         android:label="fragment_detail_muscle"
         tools:layout="@layout/fragment_detail_muscle" />
+    <fragment
+        android:id="@+id/detailBreatheFragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.DetailBreatheFragment"
+        android:label="fragment_detail_breathe"
+        tools:layout="@layout/fragment_detail_breathe">
+        <action
+            android:id="@+id/action_detailBreatheFragment_to_detailBreathe2Fragment"
+            app:destination="@id/detailBreathe2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBreathe2Fragment"
+        android:name="com.gemastik.liosiapp.data.view.fragment.DetailBreathe2Fragment"
+        android:label="fragment_detail_breathe2"
+        tools:layout="@layout/fragment_detail_breathe2" />
 </navigation>
