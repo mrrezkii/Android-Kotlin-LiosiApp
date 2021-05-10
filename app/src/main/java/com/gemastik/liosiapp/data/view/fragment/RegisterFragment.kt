@@ -1,10 +1,13 @@
 package com.gemastik.liosiapp.data.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.gemastik.liosiapp.data.view.activity.MainActivity
 import com.gemastik.liosiapp.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -17,6 +20,21 @@ class RegisterFragment : Fragment() {
     ): View? {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupView()
+    }
+
+    private fun setupView() {
+        binding.btnDaftar.setOnClickListener {
+            startActivity(Intent(requireActivity(), MainActivity::class.java))
+            requireActivity().finish()
+        }
+        binding.tvLogin.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 }
