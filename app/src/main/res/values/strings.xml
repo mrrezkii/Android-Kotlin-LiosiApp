@@ -44,5 +44,22 @@
     <string name="breathe_subdetail">Posisikan dirimu di tempat yang tenang dan kondusif, lebih baik di tempat sepi.</string>
     <string name="btn_breathe">Yuk mulai</string>
 
+    <string name="username">Username</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="belum_punya_akun">Belum punya akun ?</string>
+    <string name="daftar">Daftar</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="umur">Umur</string>
+    <string name="email">Email</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="sudah_punya_akun">Sudah punya akun ?</string>
+
+    <string-array name="gender_array">
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
 
 </resources>
