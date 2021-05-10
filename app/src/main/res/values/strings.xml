@@ -16,6 +16,10 @@
     <string name="muscle">Relaksasi Otot</string>
     <string name="positif">Visualisasi Positif</string>
 
+    <string name="menu_breathe_1">Latar Suara</string>
+    <string name="menu_breathe_2">Durasi Bernafas</string>
+    <string name="menu_breathe_3">Background</string>
+
     <string name="menu_muscle_1">Balasana</string>
     <string name="menu_muscle_2">Viparita Korani</string>
     <string name="menu_muscle_3">Makarasona</string>
@@ -35,4 +39,10 @@
     <string name="positif_subtitle2">Tahan untuk mulai bicara</string>
 
     <string name="psikolog">Pilih Psikolog</string>
+
+    <string name="breathe_detail">Setelah mengungkapkan mari meditasi sejenak</string>
+    <string name="breathe_subdetail">Posisikan dirimu di tempat yang tenang dan kondusif, lebih baik di tempat sepi.</string>
+    <string name="btn_breathe">Yuk mulai</string>
+
+
 </resources>
