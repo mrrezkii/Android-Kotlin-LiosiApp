@@ -33,10 +33,11 @@
                 android:layout_margin="@dimen/margin_normal"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_medium"
-                android:paddingTop="20sp"
+                android:gravity="center_vertical"
                 android:text="@string/menu_muscle_3"
+                android:paddingStart="@dimen/margin_large"
                 android:textColor="@color/colorBlack"
-                android:textSize="25sp" />
+                android:textSize="@dimen/text_large" />
 
             <ImageView
                 android:id="@+id/iv_background"

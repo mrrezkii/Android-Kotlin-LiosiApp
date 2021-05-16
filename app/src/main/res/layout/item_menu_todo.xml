@@ -18,7 +18,7 @@
         android:padding="@dimen/margin_medium"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_large"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 

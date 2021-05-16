@@ -5,8 +5,7 @@
     android:fontFamily="@font/montserrat_regular"
     android:maxLines="1"
     android:padding="5dp"
-    android:text="Dummy"
     android:textColor="@color/colorGrey"
-    android:textSize="15sp">
+    android:textSize="@dimen/text_large">
 
 </CheckedTextView>

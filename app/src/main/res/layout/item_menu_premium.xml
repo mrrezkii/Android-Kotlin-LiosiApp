@@ -29,18 +29,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop"></ImageView>
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center"
             android:fontFamily="@font/montserrat_regular"
             android:padding="@dimen/margin_small"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_big" />
 
     </androidx.cardview.widget.CardView>
 
