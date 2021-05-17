@@ -23,6 +23,7 @@ import com.gemastik.liosiapp.utils.showToast
 import com.github.squti.androidwaverecorder.RecorderState
 import com.github.squti.androidwaverecorder.WaveRecorder
 import timber.log.Timber
+import java.io.File
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.math.roundToInt
@@ -93,7 +94,11 @@ class PositifFragment : Fragment() {
                     isPaused = false
                     showToast("Recording...")
                 }
-                RecorderState.STOP -> showToast("Record Stop")
+                RecorderState.STOP -> {
+                    binding.appCompatSeekBar.visibility = View.VISIBLE
+                    binding.playButton.visibility = View.VISIBLE
+                    binding.pauseButton.visibility = View.GONE
+                }
                 RecorderState.PAUSE -> showToast("Record Pause")
             }
         }
@@ -127,6 +132,20 @@ class PositifFragment : Fragment() {
             }
         })
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val file = File(filePath)
+        if (file.exists()) {
+            binding.appCompatSeekBar.visibility = View.VISIBLE
+            binding.playButton.visibility = View.VISIBLE
+
+        } else {
+            binding.appCompatSeekBar.visibility = View.GONE
+            binding.playButton.visibility = View.GONE
+            binding.pauseButton.visibility = View.GONE
+        }
     }
 
     private fun formatTimeUnit(timeInMilliseconds: Long): String {
@@ -196,7 +215,6 @@ class PositifFragment : Fragment() {
             mediaPlayer.setDataSource(requireContext(), uri)
         } catch (e: Exception) {
             showToast("$e")
-
         }
 
         mediaPlayer.prepareAsync()
