@@ -3,15 +3,22 @@ package com.gemastik.liosiapp.data.view.fragment
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.gemastik.liosiapp.R
 import com.gemastik.liosiapp.databinding.FragmentPositifBinding
 import com.gemastik.liosiapp.utils.showToast
 import com.github.squti.androidwaverecorder.RecorderState
@@ -19,6 +26,8 @@ import com.github.squti.androidwaverecorder.WaveRecorder
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.math.roundToInt
+
 
 class PositifFragment : Fragment() {
 
@@ -27,7 +36,9 @@ class PositifFragment : Fragment() {
     private val PERMISSIONS_REQUEST_RECORD_AUDIO = 77
 
     private lateinit var waveRecorder: WaveRecorder
+    private lateinit var mediaPlayer: MediaPlayer
     private lateinit var filePath: String
+    private lateinit var uri: Uri
     private var isRecording = false
     private var isPaused = false
 
@@ -43,11 +54,22 @@ class PositifFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView()
         setupRecorder()
+
     }
 
     private fun setupView() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.playButton.setOnClickListener {
+            binding.playButton.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_baseline_pause_150
+                )
+            )
+            setupMediaPlayer()
         }
     }
 
@@ -136,6 +158,68 @@ class PositifFragment : Fragment() {
             else -> {
             }
         }
+    }
+
+    private fun setupMediaPlayer() {
+        mediaPlayer = MediaPlayer()
+        uri = Uri.parse(filePath)
+        mediaPlayer.setAudioAttributes(
+            AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build()
+        )
+        mediaPlayer.reset()
+
+
+        binding.appCompatSeekBar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    mediaPlayer.seekTo(progress)
+                    seekBar?.progress = progress
+
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+        })
+
+        try {
+            mediaPlayer.setDataSource(requireContext(), uri)
+        } catch (e: Exception) {
+            showToast("$e")
+
+        }
+
+        mediaPlayer.prepareAsync()
+        mediaPlayer.setOnPreparedListener {
+            binding.appCompatSeekBar.max = mediaPlayer.duration
+            mediaPlayer.start()
+            updateSeekbar()
+        }
+
+        mediaPlayer.setOnBufferingUpdateListener { mp, percent ->
+            val ratio: Double = percent / 100.0
+            val bufferingLevel: Int = (mediaPlayer.duration * ratio).roundToInt()
+            binding.appCompatSeekBar.secondaryProgress = bufferingLevel
+        }
+
+    }
+
+    private fun updateSeekbar() {
+        val current: Int = mediaPlayer.currentPosition
+        binding.appCompatSeekBar.progress = current
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            Runnable { updateSeekbar() }
+        }, 1000)
     }
 
 }

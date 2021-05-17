@@ -67,18 +67,17 @@
 
     <at.markushi.ui.CircleButton
         android:id="@+id/circleButton"
-        android:layout_width="256dp"
-        android:layout_height="241dp"
+        android:layout_width="179dp"
+        android:layout_height="165dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_baseline_mic_150"
         app:cb_color="@color/colorGrey"
         app:cb_pressedRingWidth="8dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_desc"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.162" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_subtitle"
@@ -96,6 +95,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circleButton"
         app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/appCompatSeekBar"
+        android:layout_width="257dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="68dp"
+        android:background="@color/colorWhite"
+        android:secondaryProgressTint="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/play_button"
+        android:layout_width="60dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_play_arrow_150"
+        app:cb_color="@color/colorGrey"
+        app:cb_pressedRingWidth="8dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatSeekBar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
