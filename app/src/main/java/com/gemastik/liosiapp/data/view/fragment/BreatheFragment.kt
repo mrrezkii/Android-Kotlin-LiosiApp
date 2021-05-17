@@ -36,6 +36,9 @@ class BreatheFragment : Fragment() {
         binding.menuLatarSuara.tvTitle.text = getString(R.string.menu_breathe_1)
         binding.menuDurasiBernafas.tvTitle.text = getString(R.string.menu_breathe_2)
         binding.menuBackground.tvTitle.text = getString(R.string.menu_breathe_3)
+        binding.btnMulai.setOnClickListener {
+            findNavController().navigate(R.id.action_breatheFragment_to_detailBreatheFragment)
+        }
     }
 
     private fun setupSpinner() {

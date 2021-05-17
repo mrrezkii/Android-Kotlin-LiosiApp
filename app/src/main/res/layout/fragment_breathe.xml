@@ -36,13 +36,14 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="68dp"
         android:fontFamily="@font/montserrat_medium"
-        android:text="@string/positif"
+        android:text="Tarik Nafas"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_very_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -117,6 +118,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mulai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
