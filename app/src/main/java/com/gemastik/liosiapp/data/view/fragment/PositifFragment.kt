@@ -18,7 +18,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.gemastik.liosiapp.R
 import com.gemastik.liosiapp.databinding.FragmentPositifBinding
 import com.gemastik.liosiapp.utils.showToast
 import com.github.squti.androidwaverecorder.RecorderState
@@ -63,13 +62,15 @@ class PositifFragment : Fragment() {
         }
 
         binding.playButton.setOnClickListener {
-            binding.playButton.setImageDrawable(
-                ContextCompat.getDrawable(
-                    requireContext(),
-                    R.drawable.ic_baseline_pause_150
-                )
-            )
             setupMediaPlayer()
+            binding.playButton.visibility = View.GONE
+            binding.pauseButton.visibility = View.VISIBLE
+        }
+
+        binding.pauseButton.setOnClickListener {
+            mediaPlayer.pause()
+            binding.playButton.visibility = View.VISIBLE
+            binding.pauseButton.visibility = View.GONE
         }
     }
 
@@ -211,15 +212,18 @@ class PositifFragment : Fragment() {
             binding.appCompatSeekBar.secondaryProgress = bufferingLevel
         }
 
+        mediaPlayer.setOnCompletionListener {
+            binding.playButton.visibility = View.VISIBLE
+            binding.pauseButton.visibility = View.GONE
+        }
+
     }
 
     private fun updateSeekbar() {
         val current: Int = mediaPlayer.currentPosition
         binding.appCompatSeekBar.progress = current
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            Runnable { updateSeekbar() }
-        }, 1000)
+        Handler(Looper.getMainLooper()).postDelayed({ updateSeekbar() }, 1000)
     }
 
 }
