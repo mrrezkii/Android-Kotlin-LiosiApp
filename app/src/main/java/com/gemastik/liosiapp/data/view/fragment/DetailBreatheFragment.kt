@@ -19,6 +19,10 @@ import com.gemastik.liosiapp.databinding.FragmentDetailBreatheBinding
 class DetailBreatheFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBreatheBinding
+    private val latar_suara by lazy { requireArguments().getString("latar_suara") }
+    private val durasi by lazy { requireArguments().getString("durasi") }
+    private val background by lazy { requireArguments().getString("background") }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +34,33 @@ class DetailBreatheFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupRetriveData()
         setupView()
+    }
+
+    private fun setupRetriveData() {
+        var setDurasi: Int? = null
+        setDurasi = when (durasi) {
+            "8 Set" -> 8
+            "12 Set" -> 12
+            "16 Set" -> 16
+            else -> 0
+        }
+
+        when (background) {
+            "Danau" -> {
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_muscle)
+            }
+            "Air Terjun" -> {
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_chat)
+            }
+            "Api Unggun" -> {
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_home_positif)
+            }
+            "Pantai" -> {
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_mood_todo)
+            }
+        }
     }
 
     private fun setupView() {
@@ -63,6 +93,8 @@ class DetailBreatheFragment : Fragment() {
 
             })
             .into(binding.ivBreathe)
+
+        binding.tvSubtitle.text = durasi
 
     }
 }

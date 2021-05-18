@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gemastik.liosiapp.R
@@ -14,6 +15,9 @@ import com.gemastik.liosiapp.databinding.FragmentBreatheBinding
 class BreatheFragment : Fragment() {
 
     private lateinit var binding: FragmentBreatheBinding
+    private lateinit var latarSuaraSelected: String
+    private lateinit var durasiSelected: String
+    private lateinit var backgroundSelected: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +41,14 @@ class BreatheFragment : Fragment() {
         binding.menuDurasiBernafas.tvTitle.text = getString(R.string.menu_breathe_2)
         binding.menuBackground.tvTitle.text = getString(R.string.menu_breathe_3)
         binding.btnMulai.setOnClickListener {
-            findNavController().navigate(R.id.action_breatheFragment_to_detailBreatheFragment)
+            findNavController().navigate(
+                R.id.action_breatheFragment_to_detailBreatheFragment,
+                bundleOf(
+                    "latar_suara" to latarSuaraSelected,
+                    "durasi" to durasiSelected,
+                    "background" to backgroundSelected
+                )
+            )
         }
     }
 
@@ -47,7 +58,7 @@ class BreatheFragment : Fragment() {
         val spinner3 = binding.menuBackground.spinner
 
         val option_latar_suara = arrayListOf("Air Terjun", "Api Unggun", "Pantai")
-        val option_durasi_bernafas = arrayListOf("8 Set", "12 Set", "!6 Set")
+        val option_durasi_bernafas = arrayListOf("8 Set", "12 Set", "16 Set")
         val option_background = arrayListOf("Danau", "Air Terjun", "Api Unggun", "Pantai")
 
         spinner1.adapter = ArrayAdapter<String>(
@@ -62,7 +73,7 @@ class BreatheFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-
+                latarSuaraSelected = option_latar_suara[position]
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -81,7 +92,7 @@ class BreatheFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-
+                durasiSelected = option_durasi_bernafas[position]
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -97,7 +108,7 @@ class BreatheFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-
+                backgroundSelected = option_background[position]
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
