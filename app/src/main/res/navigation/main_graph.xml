@@ -99,13 +99,5 @@
         android:name="com.gemastik.liosiapp.data.view.fragment.DetailBreatheFragment"
         android:label="fragment_detail_breathe"
         tools:layout="@layout/fragment_detail_breathe">
-        <action
-            android:id="@+id/action_detailBreatheFragment_to_detailBreathe2Fragment"
-            app:destination="@id/detailBreathe2Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/detailBreathe2Fragment"
-        android:name="com.gemastik.liosiapp.data.view.fragment.DetailBreathe2Fragment"
-        android:label="fragment_detail_breathe2"
-        tools:layout="@layout/fragment_detail_breathe2" />
 </navigation>

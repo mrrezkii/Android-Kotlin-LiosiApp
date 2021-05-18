@@ -22,6 +22,7 @@ class DetailBreatheFragment : Fragment() {
     private val latar_suara by lazy { requireArguments().getString("latar_suara") }
     private val durasi by lazy { requireArguments().getString("durasi") }
     private val background by lazy { requireArguments().getString("background") }
+    private var setDurasi: Int? = null
 
 
     override fun onCreateView(
@@ -39,12 +40,11 @@ class DetailBreatheFragment : Fragment() {
     }
 
     private fun setupRetriveData() {
-        var setDurasi: Int? = null
         setDurasi = when (durasi) {
             "8 Set" -> 8
             "12 Set" -> 12
             "16 Set" -> 16
-            else -> 0
+            else -> 1
         }
 
         when (background) {
@@ -87,7 +87,7 @@ class DetailBreatheFragment : Fragment() {
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    resource?.setLoopCount(1)
+                    resource?.setLoopCount(setDurasi!!)
                     return false
                 }
 
