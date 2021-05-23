@@ -1,5 +1,6 @@
 package com.gemastik.liosiapp.data.view.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class DetailBreatheFragment : Fragment() {
     private val durasi by lazy { requireArguments().getString("durasi") }
     private val background by lazy { requireArguments().getString("background") }
     private var setDurasi: Int? = null
+    private lateinit var mediaPlayer: MediaPlayer
 
 
     override fun onCreateView(
@@ -38,6 +40,18 @@ class DetailBreatheFragment : Fragment() {
         setupRetriveData()
         setupView()
     }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer.start()
+        mediaPlayer.isLooping = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.stop()
+    }
+
 
     private fun setupRetriveData() {
         setDurasi = when (durasi) {
@@ -59,6 +73,19 @@ class DetailBreatheFragment : Fragment() {
             }
             "Pantai" -> {
                 binding.layoutBackground.setBackgroundResource(R.drawable.bg_mood_todo)
+            }
+        }
+
+
+        when (latar_suara) {
+            "Air Terjun" -> {
+                mediaPlayer = MediaPlayer.create(requireContext(), R.raw.air_terjun)
+            }
+            "Api Unggun" -> {
+                mediaPlayer = MediaPlayer.create(requireContext(), R.raw.api_unggun)
+            }
+            "Pantai" -> {
+                mediaPlayer = MediaPlayer.create(requireContext(), R.raw.pantai)
             }
         }
     }
