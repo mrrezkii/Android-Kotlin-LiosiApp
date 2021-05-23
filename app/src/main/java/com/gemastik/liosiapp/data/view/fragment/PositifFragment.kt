@@ -244,4 +244,9 @@ class PositifFragment : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({ updateSeekbar() }, 1000)
     }
 
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.stop()
+    }
+
 }

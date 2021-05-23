@@ -63,16 +63,16 @@ class DetailBreatheFragment : Fragment() {
 
         when (background) {
             "Danau" -> {
-                binding.layoutBackground.setBackgroundResource(R.drawable.bg_muscle)
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_danau)
             }
             "Air Terjun" -> {
-                binding.layoutBackground.setBackgroundResource(R.drawable.bg_chat)
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_air_terjun)
             }
             "Api Unggun" -> {
-                binding.layoutBackground.setBackgroundResource(R.drawable.bg_home_positif)
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_muscle)
             }
             "Pantai" -> {
-                binding.layoutBackground.setBackgroundResource(R.drawable.bg_mood_todo)
+                binding.layoutBackground.setBackgroundResource(R.drawable.bg_pantai)
             }
         }
 
