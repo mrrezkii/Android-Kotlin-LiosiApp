@@ -58,6 +58,7 @@ class PositifFragment : Fragment() {
     }
 
     private fun setupView() {
+        mediaPlayer = MediaPlayer()
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -181,7 +182,6 @@ class PositifFragment : Fragment() {
     }
 
     private fun setupMediaPlayer() {
-        mediaPlayer = MediaPlayer()
         uri = Uri.parse(filePath)
         mediaPlayer.setAudioAttributes(
             AudioAttributes.Builder()
@@ -246,7 +246,10 @@ class PositifFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        mediaPlayer.stop()
+        try {
+            mediaPlayer.stop()
+        } catch (e: Exception) {
+            print(e)
+        }
     }
-
 }
